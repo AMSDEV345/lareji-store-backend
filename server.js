@@ -10,7 +10,12 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://lareji.vercel.app'],
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'https://lareji.vercel.app',
+    'https://lareji-store.vercel.app'
+  ],
   credentials: true
 }));
 
@@ -41,4 +46,4 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📍 Environment: ${process.env.NODE_ENV || 'development'}`);
-});
+}); 
